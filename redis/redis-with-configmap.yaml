@@ -92,10 +92,10 @@ metadata:
   namespace: gongxf
 spec:
   ports:
-    - port: 6379
+    - port: 6379            # Service 自身的端口
       protocol: TCP
-      targetPort: 6379
+      targetPort: 6379      # Service 连接的后端 Deployment 的端口
       nodePort: 30120       # 宿主机外部访问端口
   selector:
     app: redis
-  type: NodePort
+  type: NodePort            # 一般使用 NodePort 对外暴露 Service 
