@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: presentation
+  labels:
+    app: presentation
+spec:
+  selector:
+    matchLabels:
+      app: presentation
+  template:
+    metadata:
+      labels:
+        app: presentation
+    spec:
+      containers:
+      - name: presentation
+        image: nginx:1.14.2
